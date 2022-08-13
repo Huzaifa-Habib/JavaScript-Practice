@@ -1098,7 +1098,6 @@ City:<br>
 
 
 
-
                                 // Manipulating images and text Chap No.52
 
 

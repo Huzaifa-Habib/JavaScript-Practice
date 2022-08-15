@@ -1123,7 +1123,225 @@ City:<br>
 // function makeBig() {
 //      document.getElementById("p1").className += " big";
 // }
+
+
+
+
+
+
+                                    //Swapping images Chap No.53
+
+
+{/* <img src="before-pic.jpg" id="before" onMouseover="swapPic();"></img> */}
+
+//By using the same mouse event we use before to change image when we take mouse over but here we
+//do it with the function
+
+// function swapPic() {
+//      document.getElementById("before").src = "after-pic.jpg";
+// }
+
+//document get the images tag whoose id is "before" and when we click over that image it change with
+//"After-pic"
+
+
+{/* <img src="before-pic.jpg" id="before" onMouseover="swapPic(id,'after-pic.jpg');"> */}
+
     
+// function swapPic(eId, newPic) {
+//     document.getElementById(eId).src = newPic;
+// }
+
+
+
+
+
+
+                       // Swapping images and setting classes Chap No.54
+
+//A more common way to code the function is to break it into two steps, first assigning
+//document.getElementById("before") to a variable. Then you combine that variable with
+//.src. Let's call it the "verbose approach".
+
+// function swapPic() {
+//      var pic = document.getElementById("before");
+//      pic.src = "after-pic.jpg";
+//  }
+
+
+//  function getAddress() {
+//      var link = document.getElementById("link1");
+//      var address = link.href;
+//  }
+
+ //Now whatever the href of that link is now store in address variable
+
+
+
+
+
+                                    // Setting styles Chap No.55
+
+
+//There's another way to specify style properties other than .className.With this style method it
+// doesn't remove any other styles assigned to the element, whether those styles are specified in 
+// css or inline.
+
+//document.getElementById("pic99").style.cssFloat = "left";
+//The statement float the imgae to the left
+
+// document.getElementById("div9").style.visibility = "hidden";
+//This makes the div9 visibility hidden
+
+// var m = document.getElementById("mainPic").style.margin;
+//It only give you margin if it specified in inline styling, if it specified in other css file or
+//in style tag it doesn't show.
+// console.log(m); //It show 20px which is margin specified in inline styling
+
+// var m = document.getComputedStyle("mainPic").margin;
+//The following statement gives you all the style properties, specified in both css
+//and inline, but it has a limitation. Versions of Internet Explorer before Version 9 don't support
+//it.
+// console.log(m)
+
+
+
+
+
+                             // Target all elements by tag name Chap No.56
+
+// var par = document.getElementsByTagName("p");
+
+//Now any paragraphs in the document are store in par variable.
+// Remember:
+// If there are 2 paragraphs in the document so it store in array like elements in par variable
+//For example: par[0],par[1].Now you can also style or put any more text init just simply call its
+//index number.
+
+//Here's a loop that assigns a font family to all the paragraphs=============================
+
+// for (var i = 0; i < par.length; i++) {
+//      par[i].style.fontFamily = "Verdana, Geneva, sans-serif";
+// }
+
+
+
+
+
+                            // Target some elements by tag name Chap No.57
+
+// If you want target specific element of some specifiv div you can do this:
+
+// var e = document.getElementByID("rules");
+//Suppose Id "rules " assign to some and we want to target its paragraphs.
+var paragraphs = e.getElementsByTagName("p");
+//Store all paragraphs in that div to "paragraphs " variable
+
+//We can also target td of some specific table
+    
+
+
+
+
+
+                                        // The DOM Chap No.58
+
+
+//Document Object Model, the DOM. The DOM is an organization chart, created
+//automatically by the browser when your web page loads, for the whole web page. All the
+//things on your web page,the tags, the text blocks, the images, the links, the tables, the style
+//attributes, and more,have spots on this organization chart.
+
+//Levels pf DOM:
+
+//1st Level:document
+//2nd level:<html>
+//3rd level:<head>,<body>
+
+//These are the most important and fixed levels of "DOM" that every website inherited it.The <head> and
+//<body> tag have same level which is "3".
+
+
+// 1st level: document
+// 2nd level: <html>
+// 3rd level: <head>
+// 4th level: <title>
+// 5th level: Simple document
+// </title>
+// </head>
+// 3rd level <body>
+// 4th level <p>
+// 5th level There's not much to this.
+// </p>
+// </body>
+// </html>
+
+//Now here that three level are constant and always same in every website but 4th,5th and so on levels
+//might be differnt in every webite for e.g here <title> tag have level "4" in some websites it can be
+//link to any external file and there's same to the 4th level which is <p> tag ,it can be <h1> in some
+//websites.Now here the text of <p> tag have 5th level.
+
+
+
+// 1st level: document
+// 2nd level: <html>
+// 3rd level: <head>
+// 4th level: <title>
+// 5th level: Simple document
+// </title>
+// </head>
+// 3rd level <body>
+// 4th level <div>
+// 5th level <p>
+// 6th level There's not much to this.
+// </p>
+// 5th level <p>
+// 6th level Nor to this.
+// </p>
+// </div>
+// </body>
+// </html>
+
+
+//Now we check the level with nodes.The above code have document node,html node,head and body nodes,
+//title node ,div node, 2 paragraphs node, and three text nodes one for title and two for paragraphs
+
+//Types of nodes in above code=====================================================
+
+//1.document node
+//2.element nodes
+//3.text nodes
+
+//document node is first level,element nodes are <p>,<div>,<head>,<title>,<body>,<html> and text nodes
+//are the string of elements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 
 
 

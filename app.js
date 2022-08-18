@@ -1234,7 +1234,7 @@ City:<br>
 
 // var e = document.getElementByID("rules");
 //Suppose Id "rules " assign to some and we want to target its paragraphs.
-var paragraphs = e.getElementsByTagName("p");
+// var paragraphs = e.getElementsByTagName("p");
 //Store all paragraphs in that div to "paragraphs " variable
 
 //We can also target td of some specific table
@@ -1314,6 +1314,110 @@ var paragraphs = e.getElementsByTagName("p");
 
 //document node is first level,element nodes are <p>,<div>,<head>,<title>,<body>,<html> and text nodes
 //are the string of elements
+
+
+
+
+
+                                //The DOM:Finding children Chap No.60
+
+//As you learned in the last chapter, the Document Object Model (DOM) is a hierarchy of
+//parents and children. Everything on the web page, excluding the document itself, is a child of
+//something else
+
+// var d = document.getElementById("ny");
+// var p = d.childNodes[1]; //It gets the first child of div
+// var contents = p.innerHTML; //The result is "Urban NY is crowded"
+// console.log(contents)
+
+
+// <body>
+// <div id="cal">
+// <p>Southern Cal is sunny.</p>
+
+// <p>Northern Cal is rainy.</p>
+// <p>Eastern Cal is desert.</p>
+// </div>
+// <div id="ny">
+// <p>Urban NY is crowded.</p>
+// <p>Rural NY is sparse.</p>
+// </div>
+// </body>
+
+// var p = document.childNodes[0].childNodes[1].childNodes[1].childNodes[1];
+// var contents = p.innerHTML;
+
+//document.childNodes[0] is the document first child which is <html>
+//document.childNodes[0].childNodes[1] is the child of <html> which is <body>
+//document.childNodes[0].childNodes[1].childNodes[1] is the second child of <body> which is <div> with
+//id "ny"
+//document.childNodes[0].childNodes[1].childNodes[1].childNodes[1] is the second child of div which is
+//second paragraph 
+
+
+
+
+
+                            // The DOM:Junk artifacts and nodeType Chap No.61
+
+//Most browsers interpret thewhitespace that's created by some carriage returns, tabs, and 
+//spaces used to format the code as text nodes. When you look at the markup, you see 3 text nodes, 
+//the children of the title element and of the two paragraph elements.
+
+// 1st level: document
+// 2nd level: <html>
+// 3rd level: <head>
+// 4th level: <title>
+// 5th level: Simple document
+// </title>
+// </head>
+// 3rd level <body>
+// 4th level <div>
+// 5th level <p>
+// 6th level There's not much to this.
+// </p>
+// 5th level <p>
+// 6th level Nor to this.
+// </p>
+// </div>
+// </body>
+// </html>
+
+//Firefox sees this markup with 8 additional text nodes that are nothing but whitespace
+//created by indenting
+
+
+// <html
+// ><head
+// ><title
+// >Simple document
+// </title
+// ></head
+// ><body
+// ><div
+// ><p
+// >There's not much to this.
+// </p
+// ><p
+// >Nor to this.
+// </p
+// ></div
+// ></body
+// ></html>
+
+//Now this the markup without carriage returns and white spaces
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

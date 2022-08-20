@@ -1409,6 +1409,166 @@ City:<br>
 
 
 
+                        //The DOM:More ways to target elements Chap No.62
+
+// var targetNode = parentNode.firstChild;
+//It targets the first child of parent for example there is two <p> inside the <div> so above code 
+// targets <div> first <p> tag.
+
+// var targetNode = parentNode.lastChild;
+//It targets the last child of any parent
+
+// var kidNode = document.getElementById("div2");
+// var pNode = kidNode.parentNode; //It shows the parent of div2 which is div1
+// console.log(pNode);
+
+// var firstEl = document.getElementById("div1");
+// var secondEl = firstEl.nextSibling;
+// console.log(secondEl)
+
+//If there is no nextSibling or previousSibling, you get null. In the following code, the
+//variable nonexistentEl has a value of null, because JavaScript finds that there is no
+//previous node that has the same parent as firstEl.
+
+// var firstEl = document.getElementById("div1");
+// var nonexistentEl = firstEl.previousSibling;
+// console.log(nonexistentEl) //It shows #text which is white space
+
+
+
+
+
+                         //The DOM:Getting a target's name Chap No.63
+
+// var nType = targetNode.nodeType;
+
+//In the example above, if the node is an element, the variable nType will be assigned the
+//number 1. If the node is text, it'll be assigned the number 3.
+
+// var parent = document.getElementById("div1");
+// var target = parent.firstChild; //The first child of div1 is div2
+// var nName = target.nodeName; //It shows the node name of first child of div1
+// var nType = target.nodeType; // It shows the type of node
+// // console.log(nName) // It shows DIV always in upperCase
+// // console.log(nType) // It shows the 1 bcz it element node
+// var div2FirstChild = target.firstChild;
+
+// var text = div2FirstChild.firstChild
+// console.log(text.nodeName) //Its show #text in lowerCase
+// console.log(div2FirstChild)
+
+//Important=================================================================
+//On the other hand, if the node is a text node, the name of the node is always #text in
+//lower-case.
+
+
+// var parent = document.getElementById("chi");
+
+// console.log(parent.nodeValue) //Its shows null bcZ there is no 
+
+
+
+
+
+                              //The DOM:Counting elements Chap No.64
+
+// var parentNode = document.getElementById("ny"); //First we get the id of div
+// var nodelist = parentNode.childNodes;//Than we store the child nodes div in nodelist variable
+// var howManyKids = nodelist.length; //Than we take length of child nodes which is 5 include junk artifacts
+
+// var numberPics = 0; //we declare the counter
+//  for (var i = 0; i < howManyKids; i++) {
+
+//  if (nodelist[i].nodeName.toLowerCase() === "p") {
+//  numberPics++;
+//  console.log(numberPics) //the result is 2
+//  }
+// }
+
+//The above loop runs till child nodes length and if it <p> node in child nodes it plus the counter
+//so if we check html there are two <p> tag so the counter plus 2
+
+// console.log(nodelist)
+// console.log(howManyKids)
+
+
+
+
+
+
+                                    //The DOM:Attributes Chap No.65
+
+//You can find out whether an element has a particular attribute with hasAttribute.
+
+// var target = document.getElementById("ny");
+// var hasClass = target.hasAttribute("class");//It doesn't have class so it returns false if it
+//doesn't find the specified attribute it return false
+
+// var hasClass = target.hasAttribute("id") //It return true bcz it have id attribute
+// console.log(hasClass)
+
+// var target = document.getElementById("ny");
+// var hasClass = target.getAttribute("id") //Get attribute method give the value of attribute
+// var hasClass1 = target.getAttribute("class") //if the attribute doesn't exist it returns null 
+// console.log(hasClass) //result is ny
+// console.log(hasClass1) // result is null
+
+//You can set the value of an attribute with setAttribute.
+
+// var target = document.getElementById("div1");
+// target.setAttribute("class", "special");
+
+//set attribute method set the attribute to the element first u give the attribute name and after
+//coma u give its value
+
+
+
+
+
+                        //The DOM:Attribute names and values Chap No.66
+
+// var list = document.getElementById("p1").attributes; //you can get the number of items in the
+//collection...
+// console.log(list)
+// var list = document.getElementById("p1").attributes.length;
+// // console.log(list) //There are three attributes id,class,mouseOver
+
+// var nName = list[1].nodeName;
+// console.log(nName) // it gives us the attribute 1 which is class
+
+
+
+
+
+                            //The DOM:Adding nodes Chap No.67
+
+var nodeToAdd = document.createElement("p"); //It create the <p> tag in the document
+nodeToAdd.setAttribute("class", "regular"); // Now this set the attribute class to the <p> tag
+var newTxt = document.createTextNode("Hello!"); //This create the text node in the document
+
+//Now we have to add this text node to <p> tag which means we have make text node childern of 
+//<p> tag
+
+nodeToAdd.appendChild(newTxt); //This is the method to add text node to specified <p> tag
+console.log(nodeToAdd) //now we have the <p> tag we attribute class
+
+
+
+
+
+
+                            //The DOM:Inserting nodes Chap No.68
+
+// Now we have to insert mulitiple nodes in the specified div  
+
+
+
+
+
+
+
+
+
 
 
 
